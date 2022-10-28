@@ -27,6 +27,8 @@ public class Travel {
     @JoinColumn(name = "groupId")
     private Group group;
     private int joinUserEa;
+    @OneToMany(mappedBy = "travel", cascade = CascadeType.ALL)
+    private List<TravelMember> memberList;
     @Column(name = "startDate", nullable = false)
     private String startDate;
     @Column(name = "endDate", nullable = false)

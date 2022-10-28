@@ -16,6 +16,7 @@ public class TravelDto {
     private int budget;
     private GroupDto group;
     private int joinUserEa;
+    private List<UserDto> userList;
     private String startDate;
     private String endDate;
     private boolean isEnd;

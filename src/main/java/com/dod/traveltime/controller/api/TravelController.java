@@ -3,9 +3,8 @@ package com.dod.traveltime.controller.api;
 import com.dod.traveltime.dto.TravelDto;
 import com.dod.traveltime.service.TravelService;
 import com.google.gson.Gson;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class TravelController {
@@ -21,5 +20,10 @@ public class TravelController {
     @PostMapping("travel/insert")
     public String insertTravel(@RequestBody TravelDto dto) {
         return gson.toJson(service.makeTravel(dto));
+    }
+
+    @GetMapping("travle/list")
+    public String travelList(@RequestParam("groupId") Long groupId, Pageable pageable) {
+        return gson.toJson(service.getTravelList(groupId, pageable));
     }
 }
