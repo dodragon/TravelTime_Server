@@ -22,7 +22,7 @@ public class TravelController {
         return gson.toJson(service.makeTravel(dto));
     }
 
-    @GetMapping("travle/list")
+    @GetMapping("travel/list")
     public String travelList(@RequestParam("groupId") Long groupId, Pageable pageable) {
         return gson.toJson(service.getTravelList(groupId, pageable));
     }
