@@ -1,8 +1,11 @@
 package com.dod.traveltime.entity;
 
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Builder
@@ -27,5 +30,6 @@ public class Users {
     private String email;
     private String password;
     private String profile;
-    private Date joinedAt;
+    @CreatedDate
+    private String joinedAt = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 }

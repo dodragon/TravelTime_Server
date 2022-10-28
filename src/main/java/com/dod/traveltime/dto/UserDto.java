@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Date;
-
 @Getter
 @Setter
 @ToString
@@ -16,6 +14,6 @@ public class UserDto {
     private String email;
     private String password;
     private String profile;
-    private Date joinedAt;
+    private String joinedAt;
     private MessageDto message;
 }

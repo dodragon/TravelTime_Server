@@ -8,8 +8,6 @@ import com.dod.traveltime.repo.UserRepository;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +30,7 @@ public class UserService {
                     dto.getEmail(),
                     dto.getPassword(),
                     dto.getProfile(),
-                    new Date()
+                    null
             )).getName() + "님 가입을 축하합니다.\n가입하신 계정으로 로그인해주세요.");
         }catch (Exception e) {
             message.setError(true);
